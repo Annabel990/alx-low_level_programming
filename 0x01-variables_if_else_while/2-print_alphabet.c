@@ -1,27 +1,18 @@
 #include <stdio.h>
 
 /**
- *main - Entry point, print 00 to 99 using putchar
+ *main - print lowercase a-z
  *Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	int tens;
-	int ones;
+	char alpha = 'a';
 
-	for (tens = '0'; tens <= '9'; tens++) /*print tens place*/
+	while (alpha <= 'z')
 	{
-		for (ones = '0'; ones <= '9'; ones++) /*print ones place*/
-		{
-			putchar(tens);
-			putchar(ones);
-			if (!(tens == '9' && ones == '9')) /*skip comma at end*/
-			{
-				putchar(',');
-				putchar(' ');
-			}
-		}
+		putchar(alpha);
+		alpha++;
 	}
 	putchar('\n');
 
