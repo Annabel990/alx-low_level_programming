@@ -1,30 +1,27 @@
 #include <stdio.h>
 
 /**
- *main - print 00 to 99 with no duplicate digits or combos: no 11, no 10 (01)
- *
+ *main - print lowercase and uppercase a-zA-Z using putchar
  *Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	int ones;
-	int tens;
+	char lower = 'a';
+	char upper = 'A';
 
-	for (tens = '0'; tens <= '9'; tens++) /*increment tens*/
+	while (lower <= 'z') /*print lowercases a-z*/
 	{
-		for (ones = (tens + 1); ones <= '9'; ones++) /*one's ten+1*/
-		{
-			putchar(tens);
-			putchar(ones);
-
-			if (tens != '8' || ones != '9') /*print commas*/
-			{
-				putchar(',');
-				putchar(' ');
-			}
-		}
+		putchar(lower);
+		lower++;
 	}
+
+	while (upper <= 'Z') /*print uppercase A-Z*/
+	{
+		putchar(upper);
+		upper++;
+	}
+
 	putchar('\n');
 
 	return (0);
