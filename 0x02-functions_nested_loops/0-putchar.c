@@ -2,8 +2,8 @@
 #include "main.h"
 
 /**
- * prints _putchar
- * return: always 0
+ * main - entry point
+ * return: always 0 success
  */
 int main(void)
 {
@@ -16,8 +16,7 @@ int main(void)
 	putchar('h');
 	putchar('a');
 	putchar('r');
-	putchar('\n');
-	
+	putchar('\n');	
 	return (0);
 
 }
