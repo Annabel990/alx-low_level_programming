@@ -10,7 +10,7 @@
  */
 int _isalpha(int c)
 {
-	if (uppercase(c) || lowercase(c))
+	if (isalpha(c) || islower(c) || isupper(c))
 		return (1);
 	else
 		return (0);
