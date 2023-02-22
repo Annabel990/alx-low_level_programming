@@ -2,9 +2,9 @@
 #include "main.h"
 
 /**
- * void - print alphabet in lowercase
+ * void prin_alphabet
  *
- * desc : void
+ * Description : printing lowercase
  */
 void print_alphabet(void)
 {
@@ -12,9 +12,9 @@ void print_alphabet(void)
 	char letter;
 
 	for (letter = 'a'; letter <= 'z'; letter++)
-	{		
+	{
 		putchar(letter);
 	}
-
-	     putchar('\n');
+	
+	putchar('\n');
 }
