@@ -5,8 +5,8 @@
 /**
  * _isalpha - check alphabet character
  * @c: upper and lowercase
- * Description : check character
- * Return : 1  or 0
+ * Description : check characteir
+ * Return: 1 or 0
  */
 int _isalpha(int c)
 {
