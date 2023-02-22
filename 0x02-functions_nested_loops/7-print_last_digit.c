@@ -2,11 +2,10 @@
 #include "main.h"
 #include <ctype.h>
 /**
-  * print_last_digit - Prints the last digit of a number
-  * @n: The number to be treated
-  *
-  * Return: Value of the last digit of number
-  */
+ * print_last_digit - a function that prints the last digit of a number
+ * @nld: number's last digit result
+ * Return: value of the last digit
+ */
 int print_last_digit(int nld)
 {
 	int pld;
