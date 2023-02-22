@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "main.h"
-#include <ctype>
+#include <ctype.h>
 
 /**
  * _isalpha - check alphabet character
