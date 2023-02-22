@@ -4,17 +4,15 @@
 
 /**
 * islower - lowercase character
-* char c
+* @c - lowercase character
 *
 * Description : character to be checked
 */
 int _islower(int c)
 {
 	if (islower(c))
-	
-	 return (1);
-
-	else
-		return(0);
+		return (1);
+       	else
+		return (0);
 	
 }
