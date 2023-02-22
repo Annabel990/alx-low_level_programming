@@ -3,10 +3,11 @@
 #include "ctype.h"
 
 /**
-* islower - lowercase character
-* @c - lowercase character
+* _islower - lowercase character
+* @c: lowercase character
 *
 * Description : character to be checked
+* Return: 1 or 0
 */
 int _islower(int c)
 {
@@ -14,5 +15,4 @@ int _islower(int c)
 		return (1);
        	else
 		return (0);
-	
 }
