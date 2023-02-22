@@ -5,16 +5,14 @@
 /**
 * int _islower(int c)- print lowercase character
 *
-* Description : return 1 and 0
+* Description : character to be checked
 */
- 
 int _islower(int c)
 {
 	if (islower(c))
-	{
+	
 	 return (1);
-	}
-       	else{
+	else
 		return(0);
-	}
+	
 }
