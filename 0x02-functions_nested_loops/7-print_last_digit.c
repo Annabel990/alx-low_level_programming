@@ -7,18 +7,17 @@
   *
   * Return: Value of the last digit of number
   */
-int print_last_digit(int n)
+int print_last_digit(int nld)
 {
-	int last;
+	int pld;
 
-	last = n % 10;
+	pld = (nld % 10);
 
-	if (last < 0)
+	if (pld < 0)
 	{
-		last = last * -1;
+		pld = (-1 * pld);
 	}
 
-	_putchar(last + '0');
-
-	return (last);
+	_putchar(pld + '0');
+	return (pld);
 }
