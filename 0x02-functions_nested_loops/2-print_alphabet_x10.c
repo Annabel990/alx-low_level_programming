@@ -4,7 +4,7 @@
 /**
  * print_alphabet_x10 - make 10 alphabet
  *
- * Description : 
+ * Description : print 10 alphabet
  */
 void print_alphabet_x10(void)
 {
@@ -16,11 +16,9 @@ void print_alphabet_x10(void)
 
 	for (alph = 'a'; alph <= 'z'; alph++)
 	{
-
 		putchar(alph);
 	}
-	      putchar('\n');
-	
-        	i++;
+       	putchar('\n');
+	      i++;
 	}
 }
