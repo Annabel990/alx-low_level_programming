@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include "main.h"
+
+
 /**
  * main - Entry Point
  * @argc: arguments
@@ -16,4 +18,4 @@ int main(int argc, char *argv[])
 		i++;
 	}
 	return (0);
-}			
+}
