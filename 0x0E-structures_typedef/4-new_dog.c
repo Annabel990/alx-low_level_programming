@@ -1,83 +1,89 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "dog.h"
+#include <stdlib.h>
 
 /**
- * len - find length of string
- * @str: string
- * Return: length
+ * dup_string - Duplicates a string passed into a newly allocated space in
+ * memory
+ * @s: Pointer to the first character in the source string
+ *
+ * Return: Pointer to the first character in the newly allocated and copied
+ * string
  */
-int len(char *str)
+char *dup_string(char *s)
 {
-	int i;
+	int len, i;
+	char *ret;
 
-	for (i = 0; *(str + i); i++)
+	for (len = 0; s[len]; len++)
 		;
-	return (i);
-}
-/**
- * strcpy - copies the string pointed to by src,
- * including the terminating null byte (\0),
- * to the buffer pointed to by dest
- * @dest: copy source to this buffer
- * @src: this is the source to copy
- * Return: copy of original source
- */
-char *strcpy(char *dest, char *src)
-{
-	int i;
 
-	for (i = 0; i <= len(src); i++)
-		dest[i] = src[i];
-	return (dest);
+	ret = malloc(sizeof(char) * (len + 1));
+	if (ret == NULL)
+		return (NULL);
+
+	for (i = 0; s[i]; i++)
+		ret[i] = s[i];
+	ret[i] = '\0';
+
+	return (ret);
 }
+
 /**
- * new_dog - create new instance of struct dog
- * @name: member
- * @age: member
- * @owner: member
- * Return: initialized instance of struct dog
+ * new_dog - Makes a new dog with the given parameters
+ * @name: Pointer to the first character of the string of the name of the dog
+ * to be created
+ * @age: Age of the dog to be created as a float
+ * @owner: Pointer to the first character of the string of the owner of the dog
+ * to be created
+ *
+ * Return: Pointer to the new `dog_t` with all of the given attributes
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *dog1;
-	char *copy_of_name;
-	char *copy_of_owner;
+	char *tname, *towner;
+	dog_t *ret;
 
-	dog1 = malloc(sizeof(dog_t)); /* validate if dog1 initiated correctly */
-	if (dog1 == NULL)
+	if (name == NULL || owner == NULL)
 		return (NULL);
 
-	dog1->age = age;
+	ret = malloc(sizeof(dog_t));
+	if (ret == NULL)
+		return (NULL);
+	ret->age = age;
 
-	/* make copies of struct members and validate, else free on error */
-	/* set values of struct members to copies of arguments or set to NULL */
-	if (name != NULL)
+	tname = dup_string(name);
+	if (tname == NULL)
 	{
-		copy_of_name = malloc(len(name) + 1);
-		if (copy_of_name == NULL)
-		{
-			free(dog1);
-			return (NULL);
-		}
-		dog1->name = strcpy(copy_of_name, name);
+		free_dog(ret);
+		return (NULL);
 	}
-	else
-		dog1->name = NULL;
+	ret->name = tname;
 
-	if (owner != NULL)
+	towner = dup_string(owner);
+	if (towner == NULL)
 	{
-		copy_of_owner = malloc(len(owner) + 1);
-		if (copy_of_owner == NULL)
-		{
-			free(copy_of_name);
-			free(dog1);
-			return (NULL);
-		}
-		dog1->owner = strcpy(copy_of_owner, owner);
+		free_dog(ret);
+		return (NULL);
 	}
-	else
-		dog1->owner = NULL;
+	ret->owner = towner;
 
-	return (dog1);
+	return (ret);
+}
+
+/**
+ * free_dog - Frees all memory allocated by a dog_t struct
+ * @d: Pointer to the struct to be freed
+ */
+void free_dog(dog_t *d)
+{
+	if (d == NULL)
+		return;
+
+	if (d->name != NULL)
+		free(d->name);
+
+	if (d->owner != NULL)
+		free(d->owner);
+
+	free(d);
 }
