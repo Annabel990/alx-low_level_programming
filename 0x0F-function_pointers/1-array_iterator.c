@@ -7,14 +7,13 @@
  * @size: Size of `array`
  * @action: Pointer to the function to be called on each item in the array
  */
-
-
-
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	if(array == NULL || action == NULL)
+	unsigned int i;
+
+	if (array == NULL || action == NULL)
 		return;
 
-	for(i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 		action(array[i]);
 }
