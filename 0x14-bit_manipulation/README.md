@@ -1,1 +1,1 @@
-bat manipulation
+bit manipulation
